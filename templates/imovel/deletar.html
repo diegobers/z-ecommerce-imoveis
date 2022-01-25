@@ -1,0 +1,46 @@
+{% extends 'home.html' %}
+{% block title %}Deletar Imóvel{% endblock title %}
+
+{% block content %}
+  <div class='container mt-2 px-5'>
+    <form method='POST' action=''>
+        {% csrf_token %}
+        
+
+
+        <div class='container mt-2 px-5 row mx-auto'>
+          <div class='col-md'>
+            <hr>
+            <div class='card card-body bg-info text-white my-5 w-75 mx-auto'> 
+            <h4 class='text-white'>Confirmar exclusão?</h4>
+          
+              <table class='table table-sm'> 
+                <tr class='text-white'>
+                  <th>Descrição</th>
+                  <th>Endereço</th>
+                  <th>Valor</th>
+                </tr>
+                <tr>
+                  <td>{{imovel.descricao}}</td>
+                  <td>{{imovel.endereco}}</td>
+                  <td>{{imovel.valor}}</td>
+                </tr> 
+              </table>
+
+              </div>
+              <div class='row justify-content-center'>
+                <button class="btn btn-info text-danger mx-2" type="submit" name='submit'>Deletar</button>
+                <a class="btn btn-info mx-2" href="{% url 'imoveis' %}">Voltar</a>
+              </div>
+          </div>
+                
+        </div>
+
+
+
+
+
+    </form>
+  </div> 
+
+{% endblock %}

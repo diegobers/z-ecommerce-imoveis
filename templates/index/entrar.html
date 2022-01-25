@@ -1,0 +1,22 @@
+{% extends 'home.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Entrar{% endblock title %}
+
+{% block content %}
+
+
+<div class='row justify-content-center'>
+  <div class='container mt-2 px-5 text-info w-50 mt-3'>
+    <form action="" method='POST'>
+        {% csrf_token %}
+        {{ form|crispy }}
+        <p>Criar conta? Clique <a href="{% url 'cadastrar' %}">AQUI</a></p>
+        <div class='row justify-content-center'>
+          <button class="btn btn-info" type="submit">Entrar</button>
+        </div>
+      
+    </form>
+  </div>  
+</div>
+  
+{% endblock  %}

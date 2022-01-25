@@ -1,0 +1,18 @@
+{% extends 'home.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Todos Imóveis{% endblock title %}
+
+{% block content %}
+  <div class='container text-info w-50 my-3 '>
+    <form method='POST' action=''>
+        {% csrf_token %}  
+          {{form|crispy}}
+        
+        <div class='row justify-content-center'>
+          <button class="btn btn-info mx-2" type="submit" name='submit'>Registrar</button>
+          <a class="btn btn-info mx-2" href="{% url 'imoveis' %}">Voltar</a>
+        </div>
+      
+    </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,31 @@
+<nav class='navbar navbar-expand-sm py-3 border-bottom text-white bg-info'>
+  <div class='container'>
+    <a href="{% url 'home' %}" class='navbar-brand text-white'>
+      <span class='font-weight-bold h3'>GataImóveis</span>
+    </a>
+    <button class='navbar-toggler' data-toggle='collapse' data-target='#navbarCollapse'>
+      <span class='navbar-toggler-icon'> </span>
+    </button>
+    <div class='collapse navbar-collapse' id='navbarCollapse'>
+      
+      <span> User: {{request.user}}</span>
+      
+      <ul class='navbar-nav ml-auto'>
+        <li class='nav-item'>
+            <a href="{% url 'imoveis' %}" class='nav-link text-white lead mr-4 font-weight-bold'>Imóveis</a>
+        </li> 
+        {% if request.user.is_authenticated %}
+          <li class='nav-item'>
+            <a href="{% url 'sair' %}" class='nav-link text-white lead mr-4 font-weight-bold'>Sair</a>
+          </li>  
+        {% else %}
+          <li class='nav-item'>
+            <a href="{% url 'entrar' %}" class='nav-link text-white lead mr-4 font-weight-bold'>Entrar</a>
+          </li>
+          
+        {% endif %}
+                
+      </ul>
+    </div>
+  </div>
+</nav>

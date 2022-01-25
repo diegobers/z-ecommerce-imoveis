@@ -1,0 +1,33 @@
+{% extends 'home.html' %}
+{% block title %}Detalhes Oferta{% endblock title %}
+
+{% block content %}
+  <div class='container mt-2 px-5 row mx-auto'>
+    <div class='col-md'>
+      <hr>
+      <div class='card card-body bg-info text-white my-5 w-75 mx-auto'> 
+        <h4 class='font-weight-bold'>Detalhes do Imóvel: {{imovel.descricao}}</h4>    
+        <table class='table table-sm text-white'> 
+          <tr>
+            <th>Descrição</th>
+            <th>Endereço</th>
+            <th>Valor</th>
+            <th>Grupo</th>
+            <th>Tipo</th> 
+          </tr>
+          <tr>
+            <td>{{imovel.descricao}}</td>
+            <td>{{imovel.endereco}}</td>
+            <td>{{imovel.valor}}</td>
+            <td>{{imovel.grupo}}</td>
+            <td>{{imovel.tipo}}</td>
+          </tr> 
+        </table>
+      </div>
+      <div class='row justify-content-center'>
+        <a class="btn btn-info" href="{% url 'imoveis' %}">Voltar</a>
+      </div>
+    </div>
+  </div>
+
+{% endblock  %}
