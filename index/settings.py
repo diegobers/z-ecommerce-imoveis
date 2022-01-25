@@ -125,17 +125,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_URL = '/'
- 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-# Extra places for collectstatic to find static files.
-#STATICFILES_DIRS = (
-#    BASE_DIR / 'static',
-#)
-
-# Simplified static file serving.
-# https://warehouse.python.org/project/whitenoise/
-
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 django_heroku.settings(locals()) 
